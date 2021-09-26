@@ -12,11 +12,10 @@ export const resolvers = {
         )
       ),
 
-    prodByID: async (_root, args) => {
+    prodByID: async (_root, args) =>
       checkIfOnlyOne(
         products.filter((prdct) => prdct.productID === args.productID)
-      );
-    },
+      ),
   },
 
   Shipment: {
