@@ -1,8 +1,8 @@
-import { gql } from "apollo-server";
+import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
   type Query {
-    invoicesByNum(invoiceNum: Int): Invoice
+    invoiceByNum(invoiceNum: Int): Invoice
   }
 
   type Invoice @key(fields: "invoiceNumber accountNumber") {
@@ -27,11 +27,3 @@ export const typeDefs = gql`
     invoices: [Invoice]
   }
 `;
-
-export interface providedRootCustomer {
-  accountNumber: number;
-}
-
-export interface getInvoiceByNumArgs {
-  invoiceNum: number;
-}
