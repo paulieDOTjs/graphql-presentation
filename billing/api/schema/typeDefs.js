@@ -5,7 +5,7 @@ export const typeDefs = gql`
     invoiceByNum(invoiceNum: Int): Invoice
   }
 
-  type Invoice @key(fields: "invoiceNumber accountNumber") {
+  type Invoice {
     invoiceNumber: Int!
     accountNumber: Int!
     date: String
@@ -18,12 +18,5 @@ export const typeDefs = gql`
     CREDIT
     WIRE_TRANSFER
     DIRECT_DEPOSIT
-  }
-
-  extend type Customer @key(fields: "accountNumber") {
-    accountNumber: Int! @external
-
-    outstandingBalance: Float
-    invoices: [Invoice]
   }
 `;

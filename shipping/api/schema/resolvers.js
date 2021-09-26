@@ -24,25 +24,6 @@ export const resolvers = {
       return products.filter((prdct) => prodIDs.includes(prdct.productID));
     },
   },
-
-  Customer: {
-    orderTracking: async (root) =>
-      shipments.filter((shpmnt) => shpmnt.accountNumber === root.accountNumber),
-    orderHistory: async (root) => {
-      const pastShipments = shipments.filter(
-        (shpmnt) => shpmnt.accountNumber === root.accountNumber
-      );
-
-      const pastProductIDs = pastShipments.reduce((prev, curr) => {
-        console.log(prev);
-        curr.products.forEach((prdct) => prev.push(prdct.productID));
-        return prev;
-      }, []);
-      return products.filter((prdct) =>
-        pastProductIDs.includes(prdct.productID)
-      );
-    },
-  },
 };
 
 function checkIfOnlyOne(arr) {

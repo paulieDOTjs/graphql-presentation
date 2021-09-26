@@ -5,9 +5,8 @@
   "author": "Paul Hendrickson <PaulRobHendrickson@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "install:all": "concurrently \"cd accounts && yarn install\" \"cd billing && yarn install\"  \"cd shipping && yarn install\" \"cd gateway && yarn install\" ",
-    "start:services": "concurrently \"cd accounts && yarn start\" \"cd billing && yarn start\"  \"cd shipping && yarn start\" ",
-    "start:gateway": "cd gateway && yarn start "
+    "install:all": "concurrently \"cd accounts && yarn install\" \"cd billing && yarn install\"  \"cd shipping && yarn install\"",
+    "start:services": "concurrently \"cd accounts && yarn start\" \"cd billing && yarn start\"  \"cd shipping && yarn start\" "
   },
   "dependencies": {
     "concurrently": "^6.2.1"

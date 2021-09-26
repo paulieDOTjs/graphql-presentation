@@ -16,22 +16,6 @@ export const resolvers = {
       ),
     me: () =>
       checkIfOnlyOne(customers.filter((acct) => acct.accountNumber === 1)),
-
-    Shipment: {
-      recipient: (root) =>
-        checkIfOnlyOne(
-          customers.filter((acct) => acct.accountNumber === root.accountNumber)
-        ),
-
-      Invoice: {
-        billTo: (root) =>
-          checkIfOnlyOne(
-            customers.filter(
-              (acct) => acct.accountNumber === root.accountNumber
-            )
-          ),
-      },
-    },
   },
 };
 

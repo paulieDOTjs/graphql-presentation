@@ -6,7 +6,7 @@ export const typeDefs = gql`
     prodByID(productID: Int): Product
   }
 
-  type Shipment @key(fields: "trackingNumber accountNumber") {
+  type Shipment {
     accountNumber: Int!
     trackingNumber: Int!
 
@@ -20,7 +20,7 @@ export const typeDefs = gql`
     contents: [Product]
   }
 
-  type Product @key(fields: "productID") {
+  type Product {
     productID: Int
 
     name: String
@@ -28,11 +28,5 @@ export const typeDefs = gql`
 
     size: [Float]
     weight: Float
-  }
-
-  extend type Customer @key(fields: "accountNumber") {
-    accountNumber: Int! @external
-    orderHistory: [Product]
-    orderTracking: [Shipment]
   }
 `;

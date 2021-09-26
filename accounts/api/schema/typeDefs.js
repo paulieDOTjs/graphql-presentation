@@ -8,24 +8,10 @@ export const typeDefs = gql`
     me: Customer
   }
 
-  type Customer @key(fields: "accountNumber") {
+  type Customer {
     accountNumber: Int!
 
     username: String
     password: String
-  }
-
-  extend type Shipment @key(fields: "trackingNumber accountNumber") {
-    trackingNumber: Int! @external
-    accountNumber: Int! @external
-
-    recipient: Customer
-  }
-
-  extend type Invoice @key(fields: "invoiceNumber accountNumber") {
-    invoiceNumber: Int! @external
-    accountNumber: Int! @external
-
-    billTo: Customer
   }
 `;

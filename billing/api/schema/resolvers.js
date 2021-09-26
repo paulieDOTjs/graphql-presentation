@@ -16,24 +16,4 @@ export const resolvers = {
       }
     },
   },
-  Customer: {
-    invoices: async (root) => {
-      return invoices.filter(
-        (invoice) => invoice.accountNumber === root.accountNumber
-      );
-    },
-    outstandingBalance: async (root) => {
-      const foundInvs = invoices.filter(
-        (invoice) => invoice.accountNumber === root.accountNumber
-      );
-
-      return (
-        Math.round(
-          foundInvs
-            .map((singInv) => singInv?.amount - singInv?.paid)
-            .reduce((prev, curr) => prev + curr, 0) * 100
-        ) / 100
-      );
-    },
-  },
 };
