@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "productID": 1,
+      "size": [10, 15, 36],
+      "weight": 19,
+      "name": "bag corn feed",
+      "description": "This wonderfully picked corn is really good to give to aminals."
+    },
+    {
+      "productID": 2,
+      "size": [19, 25, 49],
+      "weight": 70,
+      "name": "bag soy feed",
+      "description": "This soy, harvested directly from the soy cow, is really good to give to meat cow."
+    },
+    {
+      "productID": 3,
+      "size": [8, 12, 19],
+      "weight": 28,
+      "name": "corn seed",
+      "description": "Put this in ground. Make corn."
+    },
+    {
+      "productID": 4,
+      "size": [19, 30, 59],
+      "weight": 109,
+      "name": "dog food",
+      "description": "If you give this to a dog they will be able to be alive."
+    }
+  ]
+}
