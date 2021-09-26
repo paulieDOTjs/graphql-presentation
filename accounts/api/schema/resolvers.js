@@ -1,30 +1,34 @@
 import fs from "fs";
 
-const { accounts } = JSON.parse(fs.readFileSync("./data.json"));
+const { customers } = JSON.parse(fs.readFileSync("./customers.json"));
 
 export const resolvers = {
   Query: {
-    getCustByNum: (_root, args) =>
-      checkIfOnlyOne(
-        accounts.filter((acct) => acct.accountNumber === args.acctNum)
-      ),
+    getCustByNum: (_root, args) => {
+      console.log(customers);
+      return checkIfOnlyOne(
+        customers.filter((acct) => acct.accountNumber === args.acctNum)
+      );
+    },
     getCustByUsername: (_root, args) =>
       checkIfOnlyOne(
-        accounts.filter((acct) => acct.username === args.username)
+        customers.filter((acct) => acct.username === args.username)
       ),
     me: () =>
-      checkIfOnlyOne(accounts.filter((acct) => acct.accountNumber === 1)),
+      checkIfOnlyOne(customers.filter((acct) => acct.accountNumber === 1)),
 
     Shipment: {
       recipient: (root) =>
         checkIfOnlyOne(
-          accounts.filter((acct) => acct.accountNumber === root.accountNumber)
+          customers.filter((acct) => acct.accountNumber === root.accountNumber)
         ),
 
       Invoice: {
         billTo: (root) =>
           checkIfOnlyOne(
-            accounts.filter((acct) => acct.accountNumber === root.accountNumber)
+            customers.filter(
+              (acct) => acct.accountNumber === root.accountNumber
+            )
           ),
       },
     },

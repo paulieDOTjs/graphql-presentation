@@ -32,11 +32,14 @@ export const resolvers = {
       const pastShipments = shipments.filter(
         (shpmnt) => shpmnt.accountNumber === root.accountNumber
       );
-      const pastPurchaseIDs = pastShipments.reduce((prev, curr) => {
+
+      const pastProductIDs = pastShipments.reduce((prev, curr) => {
+        console.log(prev);
         curr.products.forEach((prdct) => prev.push(prdct.productID));
+        return prev;
       }, []);
       return products.filter((prdct) =>
-        pastPurchaseIDs.includes(prdct.productID)
+        pastProductIDs.includes(prdct.productID)
       );
     },
   },
