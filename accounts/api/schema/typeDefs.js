@@ -1,9 +1,10 @@
-import { gql } from "apollo-server";
+import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
   type Query {
     getCustByNum(acctNum: Int): Customer
-    getCustByusername(username: String): Customer
+    getCustByUsername(username: String): Customer
+    getAllCustomers: [Customer]
     me: Customer
   }
 
@@ -12,7 +13,6 @@ export const typeDefs = gql`
 
     username: String
     password: String
-    createDate: String
   }
 
   extend type Shipment @key(fields: "trackingNumber accountNumber") {
@@ -29,21 +29,3 @@ export const typeDefs = gql`
     billTo: Customer
   }
 `;
-
-export interface rootShipment {
-  trackingNumber: number;
-  accountNumber: number;
-}
-
-export interface rootInvoice {
-  invoiceNumber: number;
-  accountNumber: number;
-}
-
-export interface getCustByNumArgs {
-  acctNum: number;
-}
-
-export interface getCustByusernameArgs {
-  username: string;
-}

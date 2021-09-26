@@ -1,0 +1,24 @@
+{
+  "accounts": [
+    {
+      "username": "username123",
+      "password": "password123",
+      "accountNumber": 1
+    },
+    {
+      "username": "myUsername",
+      "password": "jk3782*&38shHJ",
+      "accountNumber": 2
+    },
+    {
+      "username": "skiQueen16",
+      "password": "@lp1n3Sk11ng",
+      "accountNumber": 3
+    },
+    {
+      "username": "coolUser47",
+      "password": "1AmVeryC00l!",
+      "accountNumber": 4
+    }
+  ]
+}
