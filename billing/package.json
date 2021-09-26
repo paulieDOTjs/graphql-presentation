@@ -1,0 +1,17 @@
+{
+  "name": "apollo-federation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://git.cglcloud.com/anh-domain-api/apollo-federation.git",
+  "author": "Paul Hendrickson",
+  "license": "MIT",
+  "scripts": {
+    "install-all": "concurrently \"cd billing-database && yarn install\" \"cd billing-service && yarn install\"",
+    "dev:a": "concurrently  \"cd billing-database && yarn dev\" \"cd billing-service && yarn dev\"  ",
+    "dev:d": "cd billing-database && yarn dev ",
+    "dev:s": "cd billing-service && yarn dev ",
+    "start:a": "concurrently  \"cd billing-database && yarn start\" \"cd billing-service && yarn start\"  ",
+    "start:d": "cd billing-database && yarn start ",
+    "start:s": "cd billing-service && yarn start "
+  }
+}

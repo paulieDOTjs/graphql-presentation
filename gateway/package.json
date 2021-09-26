@@ -1,0 +1,25 @@
+{
+  "name": "apollo-federation-poc",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "author": "Paul Hendrickson",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn build && node dist/server.js",
+    "build": "tsc",
+    "dev": "ts-node-dev --transpile-only --no-notify src/server.ts"
+  },
+  "dependencies": {
+    "@apollo/gateway": "^0.21.3",
+    "apollo-server-express": "^2.19.0",
+    "express": "^4.17.1",
+    "graphql": "^14.7.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/graphql": "^14.5.0",
+    "@types/morgan": "^1.9.2",
+    "dotenv": "^8.2.0"
+  }
+}
