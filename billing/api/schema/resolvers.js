@@ -10,6 +10,7 @@ export const resolvers = {
       );
 
       if (foundInv.length === 1) {
+        return foundInv[0];
       } else {
         console.error("Filter did not filter right", { foundInv });
         throw new Error("Internal server error. Paul goofed.");
