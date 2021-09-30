@@ -4,12 +4,10 @@ const { customers } = JSON.parse(fs.readFileSync("./customers.json"));
 
 export const resolvers = {
   Query: {
-    getCustByNum: (_root, args) => {
-      console.log(customers);
-      return checkIfOnlyOne(
+    getCustByNum: (_root, args) =>
+      checkIfOnlyOne(
         customers.filter((acct) => acct.accountNumber === args.acctNum)
-      );
-    },
+      ),
     getCustByUsername: (_root, args) =>
       checkIfOnlyOne(
         customers.filter((acct) => acct.username === args.username)
