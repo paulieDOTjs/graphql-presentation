@@ -44,7 +44,7 @@ Automatic Typing for TypeScript from GraphQL: https://typegraphql.com
 
 ### Non-JavaScript Resources:
 
-### All things:
+#### All things:
 
 Open standard: https://graphql.org
 
