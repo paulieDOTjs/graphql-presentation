@@ -10,7 +10,7 @@ the-graphql-guide.pdf: Honestly, never even looked at this. Much too long for my
 
 ## Starting repos:
 
-I have created some repos to get started on using Apollo GraphQL.
+Some repos I created to get started on using Apollo GraphQL.
 
 Here is for creating a service: https://github.com/paulieDOTjs/service-apollo-template
 
